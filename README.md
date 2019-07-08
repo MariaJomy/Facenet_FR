@@ -13,4 +13,4 @@ We have used Haarcascade Classifier,to detect faces in a webcam,since haarcascad
 It is coded in Jupyter Notebook.Running the cell below "getting embeddings" is mandatory.For Face recognition through images or videos,run the respective cells.
 
 ## Result
-(upload.png)
+![result](upload.png)
