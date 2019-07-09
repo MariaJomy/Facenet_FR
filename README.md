@@ -1,6 +1,6 @@
 # Facenet_FR
 ## Face recognition through Facenet Model in PyTorch
-FaceNet is a Deep Learning architecture consisting of convolutional layers based on GoogLeNet inspired inception models.It returns a 512 dimensioanl vectr embedding for each face
+FaceNet is a Deep Learning architecture consisting of convolutional layers based on GoogLeNet inspired inception models.It returns a 512 dimensional vector embedding for each face
 
 ## Description
 
@@ -14,3 +14,11 @@ It is coded in Jupyter Notebook.Running the cell below "getting embeddings" is m
 
 ## Result
 ![result](upload.png)
+
+## References
+timesler's implementation of facenet model in pytorch:https://github.com/timesler/facenet-pytorch
+
+Deep Face Recognition: A Survey  https://arxiv.org/pdf/1804.06655.pdf 
+
+Real time face recognition using opencv and Deep learning,by Atul Kumar https://www.youtube.com/watch?v=-HweZMO5sFY 
+
