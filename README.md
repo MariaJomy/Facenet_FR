@@ -1,6 +1,12 @@
 # Facenet_FR
 ## Face recognition through Facenet Model in PyTorch
-FaceNet is a Deep Learning architecture consisting of convolutional layers based on GoogLeNet inspired inception models.It returns a 512 dimensional vector embedding for each face
+Face recognition is the ability to look at the digital image of a human and recognize the person just by looking at the face.
+
+FaceNet was introduced in 2015 by Google researchers; it has been a backbone of many open source Face Recognition networks like OpenFace. It is a one shot learning method that uses a Deep Convolutional Network to directly optimize the embeddings. The network consists of a batch input layer and a deep CNN followed by L2 normalization, which results in the face embedding. This is followed by the triplet loss during training.
+![](upload/FaceNet.jpg)
+
+It returns a 512 dimensional vector embedding for each face
+![](upload/Face_Embeddings.jpg)
 
 ## Description
 
@@ -10,10 +16,58 @@ Here,we have used mtcnn to detect and align the faces from images.
 
 We have used Haarcascade Classifier,to detect faces in a webcam,since haarcascade is faster than mtcnn.Hence,it is required that the faces be clearly visible while testing.
 
-It is coded in Jupyter Notebook.Running the cell below "getting embeddings" is mandatory.For Face recognition through images or videos,run the respective cells.
+## Method Implemented
 
-## Result
-![result](upload.png)
+The model runs on CPU. It is coded in Jupyter notebook.
+
+So let's take a brief look on each step
+Step 1: Hit the following commands in CMD/Terminal if you don't have already them installed:
+Install PyTorch (without CUDA) using
+
+conda install pytorch-cpu -c pytorch
+
+pip3 install torchvision
+Install OpenCV
+
+pip install opencv-python
+
+### Step 2: Face Recognition from Image
+
+Dataset used: 'datas/pic' it has images of over 10 celebrities. Run 'Face_Recognition_Images.ipynb'
+
+First get the embeddings. Then, specify the image location and run the code.
+
+Result is as follows:
+![result](upload/photo.png)
+
+#### Step 3: Face Recognition from webcam
+
+Dataset used: 'data/pic' (This file is not included here) 
+
+Run 'Face_Recognition_Webcam.ipynb'
+
+First get the embeddings. Then open Webcam and it recognises your face.
+
+Result is as follows:
+![](upload.png)
+
+#### Step 4: Accuracy:
+Run "Accuracy_check.ipynb"
+Dataset used: 'data/test_public' testing set has around 10 images  each  for 10 celebreties. So a total of 95 images.
+First get the embeddings  of the faces by specifying the training dataset location(datas/pic);
+
+###### "dataset = datasets.ImageFolder('datas/pic')"
+
+Specify the location of testing dataset(data/test_images) in the get_files function.
+
+###### "files = glob.glob("data/test_public/%s/*" %nam) "
+
+Result is as follows:Got an accuracy of 98.9%,with a threshold of 0.73
+![](upload/accuracy_p.png)
+
+For related people(family) ,got an accuracy of 95.45,with a threshold of 0.81
+![](upload/accuracy_f.png)
+
 
 ## References
 timesler's implementation of facenet model in pytorch:https://github.com/timesler/facenet-pytorch
