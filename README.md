@@ -66,7 +66,7 @@ Result is as follows:Got an accuracy of 98.9%,with a threshold of 0.73
 ![](upload/accuracy_p.png)
 
 For related people(family) ,got an accuracy of 95.45,with a threshold of 0.81
-![](upload/accuracy_f.png)
+![](upload/accruracy_f.png)
 
 
 ## References
